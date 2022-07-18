@@ -2,7 +2,7 @@ import random
 
 def get_random_word_from_wordlist():
     wordlist = []
-    with open("hangmanList.txt", 'r') as file:
+    with open(r"C:\Users\acer\Desktop\Git_Projects\hangmanList.txt", "r" ) as file:
         wordlist = file.read().split('\n')
     word = random.choice(wordlist)
     return word
