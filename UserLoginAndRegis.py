@@ -14,6 +14,7 @@ def Login_status():
         else:
             return False
     except IOError:
+        print("No Login credentital file exits.")
         return False    
     
 def _main_():
@@ -31,11 +32,11 @@ def _main_():
         _main_()
 
     else:
-        if(Login_status() == False):
-            print("Invalid Login!\n")
-            time.sleep(1)
-        elif(Login_status() == True):
+        if(Login_status() == True):
             print("Successful Login!\n")
+            time.sleep(1)
+        else:
+            print("Invalid Login!\n")
             time.sleep(1)
 
 _main_()
