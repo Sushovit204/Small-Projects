@@ -37,7 +37,7 @@ def _main_():
             print("Successful Login!\n")
             os.system("PAUSE")
         else:
-            print("Invalid Login!\n")
+            print("Invalid Login Creditinals!\n")
             os.system("PAUSE")
 
     else:
