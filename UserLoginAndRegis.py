@@ -6,19 +6,15 @@ def Login_status():
 
     try:
         with open(username+".txt", "r") as file:
-            un=file.readline()
-            pw=file.readline()
+            un=file.readline().rstrip()
+            pw=file.readline().rstrip()
         file.close()
-        print(un+" "+pw)
         if(username==un and password==pw):
             return True
         else:
             return False
     except IOError:
-        print("No such creditinal file exits")
-        return False
-
-    
+        return False    
     
 def _main_():
     choice=int(input("1.Registration\n2.Login\nChoose a method: "))
@@ -34,7 +30,7 @@ def _main_():
         f.close()
         _main_()
 
-    elif choice ==2:
+    else:
         if(Login_status() == False):
             print("Invalid Login!\n")
             time.sleep(1)
