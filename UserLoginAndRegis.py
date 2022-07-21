@@ -19,8 +19,8 @@ def Login_status():
         return False    
     
 def _main_():
-    choice=int(input("1.Registration\n2.Login\nChoose a method: "))
-    if choice ==1:
+    choice=input("1.Registration\n2.Login\nChoose a method: ")
+    if choice ==str(1):
         print("\nUser Should use unused Username.")
         UserName=input('\nEnter a Username:')
         Password=input('\nEnter the password:')
@@ -32,7 +32,7 @@ def _main_():
         f.close()
         _main_()
 
-    else:
+    elif choice ==str(2):
         if(Login_status() == True):
             print("Successful Login!\n")
             os.system("PAUSE")
@@ -40,6 +40,10 @@ def _main_():
             print("Invalid Login!\n")
             os.system("PAUSE")
 
+    else:
+        print("Enter a valid input.\n")
+        time.sleep(1)
+        _main_()
 _main_()
 
         
