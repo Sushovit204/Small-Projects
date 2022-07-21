@@ -1,8 +1,9 @@
 import time
+import os
 
 def Login_status():
-    username=input('Enter Your UserName: ')
-    password=input('\nEnter Your PassWord: ')
+    username=input('Enter Your Username: ')
+    password=input('\nEnter Your Password: ')
 
     try:
         with open(username+".txt", "r") as file:
@@ -14,7 +15,7 @@ def Login_status():
         else:
             return False
     except IOError:
-        print("No Login credentital file exits.")
+        print("No Such Login credentital file exits.")
         return False    
     
 def _main_():
@@ -34,10 +35,10 @@ def _main_():
     else:
         if(Login_status() == True):
             print("Successful Login!\n")
-            time.sleep(1)
+            os.system("PAUSE")
         else:
             print("Invalid Login!\n")
-            time.sleep(1)
+            os.system("PAUSE")
 
 _main_()
 
