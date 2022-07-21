@@ -6,11 +6,11 @@ def Login_status():
 
     try:
         with open(username+".txt", "r") as file:
-            uw=file.readline()
+            un=file.readline()
             pw=file.readline()
         file.close()
-        print(uw+" "+pw)
-        if(username==uw and password==pw):
+        print(un+" "+pw)
+        if(username==un and password==pw):
             return True
         else:
             return False
